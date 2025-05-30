@@ -35,7 +35,7 @@ class GoCommand extends Command
 //        Storage::disk('local')->put('from_s3/file-2.jpg', $getFile);
 
 //        Storage::disk('s3');
-        Storage::disk('s3')->makeDirectory('directory');
+//        Storage::disk('s3')->makeDirectory('directory');
 
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Passport;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,4 +13,17 @@ Route::get('/', function () {
 
 Route::fallback(function () {
     abort(404, "Page not found-404");
+});
+
+Route::get('/onetoone',function () {
+
+    $user = User::find(1);
+//    $passport = User::find(1)->passport;
+
+    $passport = Passport::find(1);
+//    $user = $passport->user;
+//    dd($pass->user);
+
+
+    return view('onetoone', compact('user', 'passport'));
 });
