@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Author;
+use App\Models\Book;
 use App\Models\Passport;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -16,14 +18,15 @@ Route::fallback(function () {
 });
 
 Route::get('/onetoone',function () {
-
     $user = User::find(1);
-//    $passport = User::find(1)->passport;
-
     $passport = Passport::find(1);
-//    $user = $passport->user;
-//    dd($pass->user);
-
-
     return view('onetoone', compact('user', 'passport'));
 });
+
+Route::get('/onetomany',function () {
+    $authors = Author::all();
+    $book = Book::findorfail(1);
+//    dd($book->author->name);
+    return view('onetomany', compact('authors', 'book'));
+});
+

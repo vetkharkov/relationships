@@ -2,7 +2,9 @@ sudo chown vet:vet . -R
 
 docker compose exec php bash
 
-php artisan make:model Passport -mf
+php artisan make:model Passport -mfs
+php artisan make:model Author -mfs
+php artisan make:model Book -mfs
 
 php artisan migrate:refresh --seed
 
