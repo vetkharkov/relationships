@@ -2,6 +2,8 @@
 
 use App\Models\Author;
 use App\Models\Book;
+use App\Models\Cinema;
+use App\Models\Movie;
 use App\Models\Passport;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -28,5 +30,15 @@ Route::get('/onetomany',function () {
     $book = Book::findorfail(1);
 //    dd($book->author->name);
     return view('onetomany', compact('authors', 'book'));
+});
+
+Route::get('/manytomany',function () {
+
+    $cinemas = Cinema::all();
+    $movies = Movie::all();
+
+//    dd($cinemas, $movies);
+
+    return view('manytomany', compact('cinemas', 'movies'));
 });
 

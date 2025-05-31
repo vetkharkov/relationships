@@ -5,6 +5,11 @@ docker compose exec php bash
 php artisan make:model Passport -mfs
 php artisan make:model Author -mfs
 php artisan make:model Book -mfs
+php artisan make:model Cinema -mfs
+php artisan make:model Movie -mfs
+php artisan make:model CinemaMovie -mfs
+
+php artisan make:migration create_cinema_movie_table --create=cinema_movie
 
 php artisan migrate:refresh --seed
 

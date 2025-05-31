@@ -22,6 +22,11 @@
             <p>One To Many</p>
         </a>
     </li>
+    <li>
+        <a href="/manytomany">
+            <p>Many To Many</p>
+        </a>
+    </li>
 </ol>
 
 

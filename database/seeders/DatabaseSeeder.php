@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Factories\CinemaFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +19,9 @@ class DatabaseSeeder extends Seeder
             PassportSeeder::class,
             AuthorSeeder::class,
             BookSeeder::class,
+            CinemaSeeder::class,
+            MovieSeeder::class,
+            CinemaMovieSeeder::class,
         ]);
     }
 }
