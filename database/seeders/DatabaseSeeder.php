@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
             CinemaSeeder::class,
             MovieSeeder::class,
             CinemaMovieSeeder::class,
+            ProjectSeeder::class,
+            TaskSeeder::class,
         ]);
     }
 }

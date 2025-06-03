@@ -27,6 +27,16 @@
             <p>Many To Many</p>
         </a>
     </li>
+    <li>
+        <a href="/hasonethrough">
+            <p>Has One Through</p>
+        </a>
+    </li>
+    <li>
+        <a href="/hasmanythrough">
+            <p>Has Many Through</p>
+        </a>
+    </li>
 </ol>
 
 

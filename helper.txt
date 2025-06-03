@@ -1,13 +1,29 @@
 sudo chown vet:vet . -R
+sudo chown vet:vet ./app/ -R && sudo chown vet:vet ./database/ -R
+
 
 docker compose exec php bash
 
+# Relationships OneToOne
+-php artisan make:model User -mfs
 php artisan make:model Passport -mfs
+
+# Relationships OneToMany
 php artisan make:model Author -mfs
 php artisan make:model Book -mfs
+
+# Relationships ManyToMany
 php artisan make:model Cinema -mfs
 php artisan make:model Movie -mfs
 php artisan make:model CinemaMovie -mfs
+
+# Relationships Has One Through
+-php artisan make:model User -mfs
+php artisan make:model Project -mfs
+php artisan make:model Task -mfs
+
+
+
 
 php artisan make:migration create_cinema_movie_table --create=cinema_movie
 
