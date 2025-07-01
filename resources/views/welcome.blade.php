@@ -37,6 +37,21 @@
             <p>Has Many Through</p>
         </a>
     </li>
+    <li>
+        <a href="/onetoonepolymorphic">
+            <p>One To One Polymorphic</p>
+        </a>
+    </li>
+    <li>
+        <a href="/onetomanypolymorphic">
+            <p>One To Many Polymorphic</p>
+        </a>
+    </li>
+    <li>
+        <a href="/manytomanypolymorphic">
+            <p>Many To Many Polymorphic</p>
+        </a>
+    </li>
 </ol>
 
 

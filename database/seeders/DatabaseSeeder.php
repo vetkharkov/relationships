@@ -24,6 +24,13 @@ class DatabaseSeeder extends Seeder
             CinemaMovieSeeder::class,
             ProjectSeeder::class,
             TaskSeeder::class,
+            ManSeeder::class,
+            WomanSeeder::class,
+            PhotoSeeder::class,
+            PostSeeder::class,
+            VideoSeeder::class,
+            TagSeeder::class,
+            TaggableSeeder::class,
         ]);
     }
 }
