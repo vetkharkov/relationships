@@ -54,6 +54,11 @@
     </li>
 </ol>
 
+<h2>
+    <a href="/redis">
+        <b>REDIS</b>
+    </a>
+</h2>
 
 </body>
 </html>

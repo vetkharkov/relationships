@@ -39,4 +39,15 @@ php artisan make:migration create_cinema_movie_table --create=cinema_movie
 
 php artisan migrate:refresh --seed
 
+##############################REDIS#######################################
+
+docker compose exec redis bash
+docker compose exec redis redis-cli
+redis-cli -h 127.0.0.1 -p 6379 -n 1
+
+php artisan make:command RedisTest
+
+php artisan make:controller PostController --api
+php artisan install:api
+php artisan make:resource PostResource
 

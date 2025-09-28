@@ -14,6 +14,7 @@ use App\Models\Task;
 use App\Models\User;
 use App\Models\Video;
 use App\Models\Woman;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -77,4 +78,30 @@ Route::get('/manytomanypolymorphic', function () {
     $tags = Tag::all();
 
     return view('manytomanypolymorphic', compact('posts', 'tags', 'videos'));
+});
+
+Route::get('/redis', function () {
+    $posts = Cache::remember('posts:all', 60*60, function () {
+        return Post::all();
+    });
+
+//    dd(Cache::get('posts:all'));
+
+    $res = Post::all()->each(function ($post) {
+        Cache::put('post:' . $post->id, $post);
+    });
+
+//    dd($res);
+//
+//    $str = "SELECT is database key-1";
+//    Cache::put('key-1', 'value-1', 60*60*24);
+//    Cache::put('key-2', 'value-2', 60);
+//    Cache::put('key-3', 'value-3', 30);
+//
+//    $result = Cache::get('key-1');
+//
+//    $result = Cache::remember('key-4', 60, function () use ($str) {
+//        return $str;
+//    });
+    return view('redis', compact('res'));
 });
